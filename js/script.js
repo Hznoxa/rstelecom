@@ -38,18 +38,23 @@ container.innerHTML += `
 
 loadProducts();
 
+/* OFFER SLIDER */
+
 document.addEventListener("DOMContentLoaded", function(){
 
-let offers = document.querySelectorAll(".offer-slide");
-let offerIndex = 0;
+let track = document.querySelector(".offer-track");
+let slides = document.querySelectorAll(".offer-slide");
+let index = 0;
 
 setInterval(function(){
 
-offers[offerIndex].classList.remove("active");
+index++;
 
-offerIndex = (offerIndex + 1) % offers.length;
+if(index >= slides.length){
+index = 0;
+}
 
-offers[offerIndex].classList.add("active");
+track.style.transform = "translateX(-" + index * 100 + "%)";
 
 },3000);
 
