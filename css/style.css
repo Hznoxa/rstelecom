@@ -33,7 +33,13 @@ color:#00ffd5;
 }
 
 .logo{
-font-size:24px;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo span{
+font-size:20px;
 font-weight:bold;
 color:#00ffd5;
 }
