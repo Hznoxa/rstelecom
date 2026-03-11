@@ -8,6 +8,8 @@ drawer.style.left="-250px";
 drawer.style.left="0px";
 }
 }
+/* LOAD PRODUCTS */
+
 async function loadProducts(){
 
 let response = await fetch("data/products.json");
@@ -21,11 +23,11 @@ data.phones.forEach(phone => {
 container.innerHTML += `
 <div class="product-card">
 
-<img src="${phone.image}">
+<img src="${phone.image}" alt="${phone.name}">
 
 <h3>${phone.name}</h3>
 
-<p>${phone.price}</p>
+<p class="price">${phone.price}</p>
 
 <p class="offer">${phone.offer}</p>
 
