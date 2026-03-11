@@ -250,3 +250,12 @@ background:#00ffd5;
 border:none;
 cursor:pointer;
 }
+.product-card button{
+margin-top:10px;
+padding:6px 10px;
+border:none;
+background:red;
+color:white;
+cursor:pointer;
+border-radius:5px;
+}
