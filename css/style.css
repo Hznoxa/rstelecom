@@ -262,13 +262,28 @@ border-radius:5px;
 
 /* DRAG DROP IMAGE */
 
+/* SMALL IMAGE DROP BOX */
+
 .drop-area{
+width:150px;
+height:150px;
 border:2px dashed #00ffd5;
-padding:30px;
+border-radius:10px;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
 cursor:pointer;
-border-radius:10px;
 color:#00ffd5;
+margin:auto;
+font-size:14px;
+}
+
+.drop-area img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:8px;
 }
 
 .drop-area.dragover{
