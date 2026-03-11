@@ -38,7 +38,7 @@ container.innerHTML += `
 
 loadProducts();
 
-/* OFFER SLIDER */
+document.addEventListener("DOMContentLoaded", function(){
 
 let offers = document.querySelectorAll(".offer-slide");
 let offerIndex = 0;
@@ -52,3 +52,5 @@ offerIndex = (offerIndex + 1) % offers.length;
 offers[offerIndex].classList.add("active");
 
 },3000);
+
+});
