@@ -1,11 +1,11 @@
 {
   "phones":[
-    {
-      "name":"iPhone 14",
-      "price":"₹79,999",
-      "offer":"10% OFF",
-      "image":"images/iphone14.jpg"
-    },
+   {
+   "name":"iPhone 14",
+   "price":"₹79,999",
+   "offer":"10% OFF",
+   "image":"images/iphone14.jpg"
+  },
     {
       "name":"Samsung S23",
       "price":"₹74,999",
