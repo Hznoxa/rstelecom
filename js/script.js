@@ -82,7 +82,38 @@ alert("Product Added");
 showAdminProducts();
 
 }
+let dropArea = document.getElementById("drop-area");
+let imageData = "";
 
+if(dropArea){
+
+dropArea.addEventListener("dragover", function(e){
+e.preventDefault();
+dropArea.classList.add("dragover");
+});
+
+dropArea.addEventListener("dragleave", function(){
+dropArea.classList.remove("dragover");
+});
+
+dropArea.addEventListener("drop", function(e){
+
+e.preventDefault();
+
+let file = e.dataTransfer.files[0];
+
+let reader = new FileReader();
+
+reader.onload = function(event){
+imageData = event.target.result;
+dropArea.innerHTML = "<img src='"+imageData+"' width='100'>";
+};
+
+reader.readAsDataURL(file);
+
+});
+
+}
 function showAdminProducts(){
 
 let products = JSON.parse(localStorage.getItem("phones")) || [];
@@ -127,3 +158,4 @@ showAdminProducts();
 }
 
 showAdminProducts();
+
