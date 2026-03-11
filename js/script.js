@@ -122,7 +122,7 @@ container.innerHTML += `
 <p>${phone.price}</p>
 
 <p class="offer">${phone.offer}</p>
-
+<button onclick="editProduct(${index})">Edit</button>
 <button onclick="deleteProduct(${index})">Delete</button>
 
 </div>
@@ -185,6 +185,27 @@ dropArea.innerHTML = `<img src="${imageData}">`;
 };
 
 reader.readAsDataURL(file);
+
+}
+function editProduct(index){
+
+let products = JSON.parse(localStorage.getItem("phones"));
+
+let p = products[index];
+
+document.getElementById("name").value = p.name;
+document.getElementById("price").value = p.price;
+document.getElementById("offer").value = p.offer;
+
+imageData = p.image;
+
+dropArea.innerHTML = `<img src="${p.image}" style="width:100%">`;
+
+products.splice(index,1);
+
+localStorage.setItem("phones", JSON.stringify(products));
+
+showAdminProducts();
 
 }
 function deleteProduct(index){
