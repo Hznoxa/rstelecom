@@ -104,24 +104,23 @@ function showAdminProducts(){
 
 let products = JSON.parse(localStorage.getItem("phones")) || [];
 
-let container = document.getElementById("admin-products");
+let list = document.getElementById("productList");
 
-if(!container) return;
+list.innerHTML = "";
 
-container.innerHTML="";
+products.forEach((p,index)=>{
 
-products.forEach((phone,index) => {
-
-container.innerHTML += `
+list.innerHTML += `
 <div class="product-card">
 
-<img src="${phone.image}">
+<img src="${p.image}">
 
-<h3>${phone.name}</h3>
+<h3>${p.name}</h3>
 
-<p>${phone.price}</p>
+<p>₹${p.price}</p>
 
-<p class="offer">${phone.offer}</p>
+<p>${p.offer}</p>
+
 <button onclick="editProduct(${index})">Edit</button>
 <button onclick="deleteProduct(${index})">Delete</button>
 
@@ -129,6 +128,8 @@ container.innerHTML += `
 `;
 
 });
+
+}
 
 }
 let dropArea = document.getElementById("drop-area");
