@@ -43,7 +43,7 @@ loadProducts();
 let offers = document.querySelectorAll(".offer-slide");
 let offerIndex = 0;
 
-setInterval(()=>{
+setInterval(function(){
 
 offers[offerIndex].classList.remove("active");
 
