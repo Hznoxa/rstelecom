@@ -69,7 +69,7 @@ function addProduct(){
 let name = document.getElementById("name").value;
 let price = document.getElementById("price").value;
 let offer = document.getElementById("offer").value;
-let image = document.getElementById("image").value;
+let image = imageData;
 
 let products = JSON.parse(localStorage.getItem("phones")) || [];
 
@@ -80,6 +80,38 @@ localStorage.setItem("phones", JSON.stringify(products));
 alert("Product Added");
 
 showAdminProducts();
+
+}
+
+function showAdminProducts(){
+
+let products = JSON.parse(localStorage.getItem("phones")) || [];
+
+let container = document.getElementById("admin-products");
+
+if(!container) return;
+
+container.innerHTML="";
+
+products.forEach((phone,index) => {
+
+container.innerHTML += `
+<div class="product-card">
+
+<img src="${phone.image}">
+
+<h3>${phone.name}</h3>
+
+<p>${phone.price}</p>
+
+<p class="offer">${phone.offer}</p>
+
+<button onclick="deleteProduct(${index})">Delete</button>
+
+</div>
+`;
+
+});
 
 }
 let dropArea = document.getElementById("drop-area");
@@ -110,37 +142,6 @@ dropArea.innerHTML = "<img src='"+imageData+"' width='100'>";
 };
 
 reader.readAsDataURL(file);
-
-});
-
-}
-function showAdminProducts(){
-
-let products = JSON.parse(localStorage.getItem("phones")) || [];
-
-let container = document.getElementById("admin-products");
-
-if(!container) return;
-
-container.innerHTML="";
-
-products.forEach((phone,index) => {
-
-container.innerHTML += `
-<div class="product-card">
-
-<img src="${phone.image}">
-
-<h3>${phone.name}</h3>
-
-<p>${phone.price}</p>
-
-<p class="offer">${phone.offer}</p>
-
-<button onclick="deleteProduct(${index})">Delete</button>
-
-</div>
-`;
 
 });
 
