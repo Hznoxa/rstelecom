@@ -93,7 +93,7 @@ if(!container) return;
 
 container.innerHTML="";
 
-products.forEach(phone => {
+products.forEach((phone,index) => {
 
 container.innerHTML += `
 <div class="product-card">
@@ -106,10 +106,23 @@ container.innerHTML += `
 
 <p class="offer">${phone.offer}</p>
 
+<button onclick="deleteProduct(${index})">Delete</button>
+
 </div>
 `;
 
 });
+
+}
+function deleteProduct(index){
+
+let products = JSON.parse(localStorage.getItem("phones")) || [];
+
+products.splice(index,1);
+
+localStorage.setItem("phones", JSON.stringify(products));
+
+showAdminProducts();
 
 }
 
