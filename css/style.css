@@ -178,3 +178,52 @@ min-width:100%;
 text-align:center;
 padding:12px;
 }
+
+/* FEATURED PHONES */
+
+.featured{
+padding:60px 20px;
+text-align:center;
+}
+
+.featured h2{
+color:#00ffd5;
+margin-bottom:40px;
+}
+
+.products{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+}
+
+.product-card{
+background:#1c1c1c;
+width:220px;
+padding:20px;
+border-radius:10px;
+text-align:center;
+transition:0.3s;
+}
+
+.product-card:hover{
+transform:translateY(-10px);
+}
+
+.product-card img{
+width:100%;
+border-radius:8px;
+margin-bottom:10px;
+}
+
+.price{
+font-weight:bold;
+margin-top:5px;
+}
+
+.offer{
+color:#00ffd5;
+font-size:14px;
+margin-top:5px;
+}
