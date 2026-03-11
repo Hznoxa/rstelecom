@@ -115,35 +115,59 @@ container.innerHTML += `
 
 }
 let dropArea = document.getElementById("drop-area");
+let fileInput = document.getElementById("fileElem");
+
 let imageData = "";
 
 if(dropArea){
 
+// Click upload
+dropArea.addEventListener("click", () => {
+fileInput.click();
+});
+
+fileInput.addEventListener("change", function(){
+handleFile(fileInput.files[0]);
+});
+
+// Drag over
 dropArea.addEventListener("dragover", function(e){
 e.preventDefault();
 dropArea.classList.add("dragover");
 });
 
+// Drag leave
 dropArea.addEventListener("dragleave", function(){
 dropArea.classList.remove("dragover");
 });
 
+// Drop image
 dropArea.addEventListener("drop", function(e){
 
 e.preventDefault();
 
 let file = e.dataTransfer.files[0];
 
+handleFile(file);
+
+});
+
+}
+
+// Image processing
+function handleFile(file){
+
 let reader = new FileReader();
 
 reader.onload = function(event){
+
 imageData = event.target.result;
-dropArea.innerHTML = "<img src='"+imageData+"' width='100'>";
+
+dropArea.innerHTML = `<img src="${imageData}">`;
+
 };
 
 reader.readAsDataURL(file);
-
-});
 
 }
 function deleteProduct(index){
