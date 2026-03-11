@@ -71,6 +71,11 @@ let price = document.getElementById("price").value;
 let offer = document.getElementById("offer").value;
 let image = imageData;
 
+if(!name || !price || !image){
+alert("Please fill all required fields");
+return;
+}
+
 let products = JSON.parse(localStorage.getItem("phones")) || [];
 
 products.push({name,price,offer,image});
@@ -80,6 +85,18 @@ localStorage.setItem("phones", JSON.stringify(products));
 alert("Product Added");
 
 showAdminProducts();
+
+/* CLEAR FORM */
+
+document.getElementById("name").value="";
+document.getElementById("price").value="";
+document.getElementById("offer").value="";
+
+imageData="";
+
+/* RESET IMAGE BOX */
+
+dropArea.innerHTML = "<span>Click or Drop Image</span>";
 
 }
 
