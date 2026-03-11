@@ -259,3 +259,18 @@ color:white;
 cursor:pointer;
 border-radius:5px;
 }
+
+/* DRAG DROP IMAGE */
+
+.drop-area{
+border:2px dashed #00ffd5;
+padding:30px;
+text-align:center;
+cursor:pointer;
+border-radius:10px;
+color:#00ffd5;
+}
+
+.drop-area.dragover{
+background:rgba(0,255,213,0.1);
+}
