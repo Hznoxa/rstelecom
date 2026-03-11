@@ -37,3 +37,18 @@ container.innerHTML += `
 }
 
 loadProducts();
+
+/* OFFER SLIDER */
+
+let offers = document.querySelectorAll(".offer-slide");
+let offerIndex = 0;
+
+setInterval(()=>{
+
+offers[offerIndex].classList.remove("active");
+
+offerIndex = (offerIndex + 1) % offers.length;
+
+offers[offerIndex].classList.add("active");
+
+},3000);
