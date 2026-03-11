@@ -227,3 +227,26 @@ color:#00ffd5;
 font-size:14px;
 margin-top:5px;
 }
+
+/* ADMIN PANEL */
+
+.admin-form{
+display:flex;
+flex-direction:column;
+width:300px;
+margin:30px auto;
+gap:10px;
+}
+
+.admin-form input{
+padding:10px;
+border-radius:5px;
+border:none;
+}
+
+.admin-form button{
+padding:10px;
+background:#00ffd5;
+border:none;
+cursor:pointer;
+}
