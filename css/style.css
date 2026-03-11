@@ -164,17 +164,17 @@ height:60px;
 width:100%;
 background:#00ffd5;
 color:black;
-text-align:center;
-padding:12px;
-font-weight:bold;
-position:relative;
 overflow:hidden;
+font-weight:bold;
+}
+
+.offer-track{
+display:flex;
+transition:transform 0.6s ease;
 }
 
 .offer-slide{
-display:none;
-}
-
-.offer-slide.active{
-display:block;
+min-width:100%;
+text-align:center;
+padding:12px;
 }
