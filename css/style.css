@@ -158,3 +158,23 @@ z-index:1000;
 width:60px;
 height:60px;
 }
+/* OFFER SLIDER */
+
+.offer-slider{
+width:100%;
+background:#00ffd5;
+color:black;
+text-align:center;
+padding:12px;
+font-weight:bold;
+position:relative;
+overflow:hidden;
+}
+
+.offer-slide{
+display:none;
+}
+
+.offer-slide.active{
+display:block;
+}
