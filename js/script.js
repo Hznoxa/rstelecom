@@ -222,4 +222,6 @@ showAdminProducts();
 }
 
 showAdminProducts();
-
+function closeBanner(){
+document.getElementById("openingBanner").style.display="none";
+}
