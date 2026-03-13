@@ -222,6 +222,17 @@ showAdminProducts();
 }
 
 showAdminProducts();
+
+
 function closeBanner(){
 document.getElementById("openingBanner").style.display="none";
+localStorage.setItem("bannerSeen","yes");
 }
+
+window.onload = function(){
+
+if(localStorage.getItem("bannerSeen") === "yes"){
+let banner=document.getElementById("openingBanner");
+if(banner) banner.style.display="none";
+}
+
