@@ -236,3 +236,11 @@ let banner=document.getElementById("openingBanner");
 if(banner) banner.style.display="none";
 }
 
+/* auto close after 6 seconds */
+
+setTimeout(()=>{
+closeBanner();
+},6000);
+
+}
+
