@@ -224,23 +224,32 @@ showAdminProducts();
 showAdminProducts();
 
 
-function closeBanner(){
-document.getElementById("openingBanner").style.display="none";
-localStorage.setItem("bannerSeen","yes");
-}
+document.addEventListener("DOMContentLoaded", function () {
 
-window.onload = function(){
+let banner = document.getElementById("openingBanner");
 
-if(localStorage.getItem("bannerSeen") === "yes"){
-let banner=document.getElementById("openingBanner");
-if(banner) banner.style.display="none";
+/* hide banner if already seen */
+
+if (localStorage.getItem("bannerSeen") === "yes") {
+if (banner) banner.style.display = "none";
 }
 
 /* auto close after 6 seconds */
 
-setTimeout(()=>{
+setTimeout(function(){
 closeBanner();
 },6000);
 
+});
+
+/* close button */
+
+function closeBanner(){
+let banner = document.getElementById("openingBanner");
+
+if(banner){
+banner.style.display="none";
 }
 
+localStorage.setItem("bannerSeen","yes");
+}
