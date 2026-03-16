@@ -223,33 +223,3 @@ showAdminProducts();
 
 showAdminProducts();
 
-
-document.addEventListener("DOMContentLoaded", function () {
-
-let banner = document.getElementById("openingBanner");
-
-/* hide banner if already seen */
-
-if (localStorage.getItem("bannerSeen") === "yes") {
-if (banner) banner.style.display = "none";
-}
-
-/* auto close after 6 seconds */
-
-setTimeout(function(){
-closeBanner();
-},6000);
-
-});
-
-/* close button */
-
-function closeBanner(){
-let banner = document.getElementById("openingBanner");
-
-if(banner){
-banner.style.display="none";
-}
-
-localStorage.setItem("bannerSeen","yes");
-}
