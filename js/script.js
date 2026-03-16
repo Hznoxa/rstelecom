@@ -73,9 +73,9 @@ let dots=document.querySelectorAll(".dot");
 
 function updateSlider(){
 
-slides.style.transform=`translateX(-${index*100}%)`;
+slides.style.transform = `translateX(-${index * 100}%)`;
 
-dots.forEach(dot=>dot.classList.remove("active"));
+dots.forEach(dot => dot.classList.remove("active"));
 dots[index].classList.add("active");
 
 }
@@ -86,7 +86,9 @@ next.onclick=function(){
 
 index++;
 
-if(index>=total) index=0;
+if(index >= total){
+index = 0;
+}
 
 updateSlider();
 
@@ -98,16 +100,26 @@ prev.onclick=function(){
 
 index--;
 
-if(index<0) index=total-1;
+if(index < 0){
+index = total - 1;
+}
 
 updateSlider();
 
 }
 
-/* auto slide */
+/* auto slider */
 
-setInterval(()=>{
-next.click();
+setInterval(function(){
+
+index++;
+
+if(index >= total){
+index = 0;
+}
+
+updateSlider();
+
 },4000);
 
 /* ADMIN PRODUCT SYSTEM */
