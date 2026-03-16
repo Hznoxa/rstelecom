@@ -40,27 +40,75 @@ container.innerHTML += `
 
 loadProducts();
 
-/* OFFER SLIDER */
+let slides = document.querySelector(".slides");
+let slideImages = document.querySelectorAll(".slide");
+let prev = document.querySelector(".prev");
+let next = document.querySelector(".next");
+let dotsContainer = document.querySelector(".dots");
 
-document.addEventListener("DOMContentLoaded", function(){
-
-let track = document.querySelector(".offer-track");
-let slides = document.querySelectorAll(".offer-slide");
 let index = 0;
+let total = slideImages.length;
 
-setInterval(function(){
+/* create dots */
+
+for(let i=0;i<total;i++){
+
+let dot=document.createElement("div");
+dot.classList.add("dot");
+
+if(i===0) dot.classList.add("active");
+
+dot.addEventListener("click",()=>{
+index=i;
+updateSlider();
+});
+
+dotsContainer.appendChild(dot);
+
+}
+
+let dots=document.querySelectorAll(".dot");
+
+/* update slider */
+
+function updateSlider(){
+
+slides.style.transform=`translateX(-${index*100}%)`;
+
+dots.forEach(dot=>dot.classList.remove("active"));
+dots[index].classList.add("active");
+
+}
+
+/* next */
+
+next.onclick=function(){
 
 index++;
 
-if(index >= slides.length){
-index = 0;
+if(index>=total) index=0;
+
+updateSlider();
+
 }
 
-track.style.transform = "translateX(-" + index * 100 + "%)";
+/* prev */
 
-},3000);
+prev.onclick=function(){
 
-});
+index--;
+
+if(index<0) index=total-1;
+
+updateSlider();
+
+}
+
+/* auto slide */
+
+setInterval(()=>{
+next.click();
+},4000);
 
 /* ADMIN PRODUCT SYSTEM */
 
